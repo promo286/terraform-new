@@ -1,16 +1,14 @@
-provider "aws" {
-  region= "us-east-1"
-  
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.84.0"
+    }
+  }
 }
 
-resource "aws_instance" "firstec2" {
-  ami = "ami-04b4f1a9cf54c11d0"
-  instance_type = "t2.small"
-
-  tags = {
-    Name ="myfirstec2"
-    mangedby = "terraform"
-
-  }
-   
+resource "aws_instance" "demo" {
+  ami= "ami-088b41ffb0933423f"
+  instance_type = "t2.micro"
+  
 }

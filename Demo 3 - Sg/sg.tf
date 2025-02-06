@@ -2,26 +2,31 @@ provider "aws" {
     region = "us-east-1"
 }
   
-resource "aws_security_group" "sg" {
-    name        = "demo"
-    description = "Allow all traffic"
-  
+  resource "aws_security_group" "sg" {
+    name= "demo-sg"
+    description = "Allow inbound traffic on port 80"
+
+   
 }
 
-resource "aws_security_group_rule" "sg_ingress" {
+  resource "aws_vpc_security_group_ingress_rule" "demo12" {
     security_group_id = aws_security_group.sg.id
-    type              = "ingress"
+cidr_ipv4         = "0.0.0.0/0"
+    from_port         = 443
+    ip_protocol       = "tcp"
+        to_port           = 443
+        description = "Allow inbound traffic on port 443"
+
+    
+  }
+
+    resource "aws_vpc_security_group_ingress_rule" "demo123" {
+    security_group_id = aws_security_group.sg.id
+    cidr_ipv4         = "0.0.0.0/0"
     from_port         = 80
-    to_port           = 80
-    protocol          = "tcp"
-    cidr_blocks       = ["0.0.0.0/0"]
-}
+    ip_protocol       = "tcp"
+    to_port           = 100
+    description = "Allow inbound traffic on port 80 to 100"
 
-resource "aws_security_group_rule" "egress" {
-    security_group_id = aws_security_group.sg.id
-    type              = "egress"
-    from_port         = 0
-    to_port           = 0
-    protocol          = "-1"
-    cidr_blocks       = ["0.0.0.0/0"]
-}
+    
+  }
