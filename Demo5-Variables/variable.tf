@@ -4,7 +4,6 @@ variable "vpn_ip" {
 }
 
 variable "app_port" {
-    default = "8080"
 }
 
 variable "ssh_port" {
@@ -14,3 +13,9 @@ variable "ssh_port" {
 variable "ftp_port" {
     default = "21"
 }
+
+variable "Ip-allow" {
+    default = "tcp"  
+}
+
+

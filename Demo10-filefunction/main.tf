@@ -1,6 +1,6 @@
-# resource "aws_iam_user" "this" {
-#   name = "demo-user"
-# }
+resource "aws_iam_user" "this" {
+  name = "demo-user"
+}
 
 # resource "aws_iam_user_policy" "lb_ro" {
 #   name = "demo-user-policy"

@@ -22,18 +22,10 @@ resource "aws_vpc_security_group_ingress_rule" "ssh_port" {
 
 resource "aws_vpc_security_group_ingress_rule" "ftp_port" {
   security_group_id = aws_security_group.allow_tls.id
-  cidr_ipv4         = var.ip
+  cidr_ipv4         = "var.ip"
   from_port         = var.ftp_port
   ip_protocol       = "tcp"
   to_port           = var.ftp_port
 }
 
 
-/*
-
-Env Variable 
-terraform.tfcars
-anyname.auto.tfvars
-any -var and -var-file flag
-
-*/

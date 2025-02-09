@@ -1,5 +1,5 @@
 variable "environment" {
-  default = "dev"
+  default = "DEV"
 }
 
 variable "instance_types" {
@@ -10,6 +10,7 @@ variable "tags" {
   default = {
     Name  = "MyServer"
     Owner = "Admin"
+    ENV  = "dev"
   }
 }
 
@@ -34,7 +35,7 @@ output "merged_map" {
 }
 
 output "timestamp_now" {
-  value = timestamp()
+  value = formatdate("DD MMM YYYY hh:mm ZZZ", timestamp())
 }
 
 output "subnet_calc" {
@@ -47,5 +48,5 @@ output "for_loop_example" {
 
 
 output "file_content" {
-  value = file("example.txt") # Reads content from example.txt
+  value = file("./example.txt") # Reads content from example.txt
 }
