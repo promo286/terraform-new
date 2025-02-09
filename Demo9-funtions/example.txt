@@ -1,0 +1,1 @@
+this is demo that terraform reading the file from local
