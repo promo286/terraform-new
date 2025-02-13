@@ -42,3 +42,12 @@ output "sg-arn" {
   value= aws_security_group.sg.arn
   
 }
+
+# vpn server 
+resource "aws_eip" "lb" {
+    domain   = "vpc"
+
+    tags = {
+        Name = "MyEIP"
+    }
+}
