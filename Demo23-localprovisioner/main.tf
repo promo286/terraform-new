@@ -12,3 +12,6 @@ resource "aws_instance" "example" {
     Name = "LocalExecExample"
   }
 }
+
+
+ 

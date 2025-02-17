@@ -22,3 +22,15 @@ module "eks" {
     }
   }
 }
+
+# module "ec2-instance" {
+#   source  = "terraform-aws-modules/ec2-instance/aws"
+#   version = "5.7.1"
+#   ami = "ami-04b4f1a9cf54c11d0"
+#   instance_type = "t2.small" 
+# }
+
+# output "ip" {
+#   value = module.ec2-instance.public_ip  
+# }
+

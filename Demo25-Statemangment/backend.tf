@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket = "statefilemangement"
+    bucket = "tamilclouddemo28"
     key    = "demo.terraform.tfstate"
     region = "us-east-1"
-    dynamodb_table = "teraform_lock_table"
+    dynamodb_table = "terrafrom_lock"
   }
 }
 

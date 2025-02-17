@@ -1,16 +1,15 @@
+resource "aws_eip" "lb" {
+  domain = "vpc"
 
-
-resource "aws_instance" "example" {
-  ami           = "ami-085ad6ae776d8f09c" 
-  instance_type = "t2.micro"
-
-  
+  tags = {
+    Name = "MyEIP"
+  }
 }
-
-
 
 # terraform Show 
 # terraform plan -out=planfile
 # terraform apply "planfile"
 # terraform destroy
 # terraform fmt
+
+#Change_ticket_adding_instance

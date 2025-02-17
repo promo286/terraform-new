@@ -10,8 +10,9 @@ resource "aws_instance" "app_server" {
 }
 
 resource "aws_s3_bucket" "example" {
-  bucket = "my-app-bucket"
+  bucket = "my-app-buckasdasdasdasdet"
 }
+
 
 # terraform apply -target=aws_instance.app_server
 
