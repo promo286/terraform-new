@@ -7,12 +7,13 @@ variable "instance_type" {
     default = "t2.micro"
     dev     = "t2.small"
     prod    = "t3.medium"
+    qa      = "t2.nano"
   }
 }
 
 resource "aws_instance" "example" {
   ami           = "ami-12345678"
-  instance_type = lookup(var.instance_type, terraform.workspace, "t2.micro")
+  instance_type = lookup(var.instance_type, terraform.workspace, "t2.large")
 }
 
 

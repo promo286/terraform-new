@@ -1,14 +1,16 @@
-
-# Example: Import an AWS S3 Bucket
-# Suppose you have an existing S3 bucket named my-existing-bucket, and you want to manage it in Terraform.
-
-resource "aws_s3_bucket" "example" {
-  bucket = "my-existing-bucket"
+provider "aws" {
+  region = "us-east-1"
+  
 }
 
+import {
+  to=aws_instance.demo
+  id="i-0f2594aca4fedffb5"
+}
 
-# terraform import aws_s3_bucket.example my-existing-bucket
+import {
+  to= aws_security_group.demo1
+  id="sg-00e5a37cc92cf9cf4"
+}
 
-# terraform plan
-# terraform apply
-
+# terraform plan -generate-config-out=sg.tf
